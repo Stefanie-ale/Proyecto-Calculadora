@@ -37,6 +37,10 @@ double raizCuadrada(double a) {
     return sqrt(a);
 }
 
+double potencia(double base, double exponente) {
+    return pow(base, exponente);
+}
+
 int main() {
     cout << "CALCULADORA GRUPO 1" << endl;
     double num1, num2;
@@ -46,7 +50,7 @@ int main() {
     if (cin.peek() != '\n') {
         cin >> num2;
     }
-    cout << "Ingrese operación (+, -, *, /,r): ";
+    cout << "Ingrese operación (+, -, *, /,r,n,^): ";
     cin >> operacion;
 
     switch (operacion) {
@@ -67,6 +71,9 @@ int main() {
             break;
         case 'r':
             cout << "Resultado: " << raizCuadrada(num1) << endl;
+            break;
+        case '^':
+            cout << "Resultado: " << potencia(num1, num2) << endl;
             break;
         default:
             cout << "Operación no válida." << endl;
