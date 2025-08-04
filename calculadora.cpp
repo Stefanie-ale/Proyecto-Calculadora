@@ -41,16 +41,24 @@ double potencia(double base, double exponente) {
     return pow(base, exponente);
 }
 
+double logaritmo(double a) {
+    if (a <= 0) {
+        cout << "Error: Logaritmo de número no positivo no permitido." << endl;
+        return 0;
+    }
+    return log10(a);
+}
+
 int main() {
     cout << "CALCULADORA GRUPO 1" << endl;
     double num1, num2;
     char operacion;
-    cout << "Ingrese un número (para raíz cuadrada) o dos números (para otras operaciones): ";
+    cout << "Ingrese un número (para raíz cuadrada, logaritmo y logaritmo natural) o dos números (para otras operaciones): ";
     cin >> num1;
     if (cin.peek() != '\n') {
         cin >> num2;
     }
-    cout << "Ingrese operación (+, -, *, /,r,n,^): ";
+    cout << "Ingrese operación (+, -, *, /, r , n ,^, l): ";
     cin >> operacion;
 
     switch (operacion) {
@@ -74,6 +82,9 @@ int main() {
             break;
         case '^':
             cout << "Resultado: " << potencia(num1, num2) << endl;
+            break;
+        case 'l':
+            cout << "Resultado: " << logaritmo(num1) << endl;
             break;
         default:
             cout << "Operación no válida." << endl;
