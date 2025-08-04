@@ -23,8 +23,12 @@ double dividir(double a, double b) {
     return a / b;
 }
 
-double potencia(double base, double exponente) {
-    return pow(base, exponente);
+double logaritmoNatural(double a) {
+    if (a <= 0) {
+        cout << "Error: Logaritmo natural de número no positivo no permitido." << endl;
+        return 0;
+    }
+    return log(a);
 }
 
 int main() {
@@ -33,7 +37,7 @@ int main() {
     char operacion;
     cout << "Ingrese dos números: ";
     cin >> num1 >> num2;
-    cout << "Ingrese operación (+, -, *, /, ^): ";
+    cout << "Ingrese operación (+, -, *, /, n): ";
     cin >> operacion;
 
     switch (operacion) {
@@ -49,8 +53,8 @@ int main() {
         case '/':
             cout << "Resultado: " << dividir(num1, num2) << endl;
             break;
-        case '^':
-            cout << "Resultado: " << potencia(num1, num2) << endl;
+        case 'n':
+            cout << "Resultado: " << logaritmoNatural(num1) << endl;
             break;
         default:
             cout << "Operación no válida." << endl;
