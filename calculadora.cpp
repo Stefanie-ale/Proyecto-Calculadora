@@ -31,13 +31,17 @@ double logaritmoNatural(double a) {
     return log(a);
 }
 
+double potencia(double base, double exponente) {
+    return pow(base, exponente);
+}
+
 int main() {
     //"CALCULADORA GRUPO 1"
     double num1, num2;
     char operacion;
     cout << "Ingrese dos números: ";
     cin >> num1 >> num2;
-    cout << "Ingrese operación (+, -, *, /, n): ";
+    cout << "Ingrese operación (+, -, *, /, ^, n): ";
     cin >> operacion;
 
     switch (operacion) {
@@ -55,6 +59,9 @@ int main() {
             break;
         case 'n':
             cout << "Resultado: " << logaritmoNatural(num1) << endl;
+            break;
+        case '^':
+            cout << "Resultado: " << potencia(num1, num2) << endl;
             break;
         default:
             cout << "Operación no válida." << endl;
